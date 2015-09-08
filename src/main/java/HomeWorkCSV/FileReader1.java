@@ -25,7 +25,7 @@ public class FileReader1 implements CSVReader {
     //метод считывает данные с файла CSV
     @Override
     public List<Product> readFromFile(String destinationFileName) {
-        LinkedList<Product> result = new LinkedList<>();//создал лист обьектов Product
+        List<Product> result = new LinkedList<>();//создал лист обьектов Product
         BufferedReader readfromCSV = null;
         try {
             readfromCSV = new BufferedReader(new FileReader(destinationFileName));

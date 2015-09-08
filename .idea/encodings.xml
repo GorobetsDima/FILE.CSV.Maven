@@ -5,8 +5,11 @@
     <file url="file://$PROJECT_DIR$/src/main/java/HomeWorkCSV/CSVReader.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/HomeWorkCSV/CSVSort.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/HomeWorkCSV/CSVWriter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/HomeWorkCSV/CompareType.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/HomeWorkCSV/FileReader1.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/HomeWorkCSV/FileWriter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/HomeWorkCSV/Product.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/HomeWorkCSV/WrongFieldNumberException.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/HomeWorkCSV/WrongValueException.java" charset="UTF-8" />
   </component>
 </project>

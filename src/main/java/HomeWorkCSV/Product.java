@@ -51,18 +51,23 @@ public class Product implements Comparable<Product> {
         this.dateProduction = dateProduction;
     }
 
-
+//default метод сортировки
     @Override
     public int compareTo(Product o) {
         int result;
-        result = name.compareTo(o.name);
-        if (result != 0) {
-            return result;
-        }
         result = dateProduction.compareTo(o.dateProduction);
         if (result != 0) {
             return result;
         }
+        result = Integer.compare(price, o.price);
+        if (result != 0) {
+            return result;
+        }
+        result = name.compareTo(o.name);
+        if (result != 0) {
+            return result;
+        }
+
         result = productLife.compareTo(o.productLife);
         if (result != 0) {
             return result;
@@ -71,10 +76,7 @@ public class Product implements Comparable<Product> {
         if (result != 0) {
             return result;
         }
-        result = Integer.compare(price, o.price);
-        if (result != 0) {
-            return result;
-        }
+
 
         return result;
     }

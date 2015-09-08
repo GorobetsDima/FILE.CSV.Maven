@@ -67,7 +67,7 @@ public class CSVFileRunner {
         p8.setProductLife("6 месяцев");
         p8.setPrice(28);
 
-        List<Product> newProducts = new LinkedList<>();//Лист продуктов
+        List<Product> newProducts = new LinkedList<>();//Лист с обьектами Product
         newProducts.add(p1);
         newProducts.add(p2);
         newProducts.add(p3);
@@ -77,17 +77,18 @@ public class CSVFileRunner {
         newProducts.add(p7);
         newProducts.add(p8);
 
-
-        FileWriter fw = new FileWriter();
-        fw.writeProductListToCSV("BasketOfProducts.csv", newProducts, true);
 //
-//
-        FileReader1 fr = new FileReader1(8);
-        fr.readFromFile("C:\\Users\\Gorobets Dmitriy\\IdeaProjects\\helloworld\\BasketOfProducts.csv");
+//        FileWriter fw = new FileWriter();
+//        fw.writeProductListToCSV("BasketOfProducts.csv", newProducts, true);
+////
+////
+//        FileReader1 fr = new FileReader1(8);
+//        fr.readFromFile("C:\\Users\\Gorobets Dmitriy\\IdeaProjects\\FILE.CSV.Maven1\\BasketOfProducts.csv");
 
 //        fw.isTrueWriteAndReadCSVFile(fr.getCsvProduct(),newProducts);
         CSVSort sort = new CSVSort();
-        sort.addNewDataAndSortBy("BasketOfProducts.csv",newProducts,CompareType.BY_PRICE);
+        sort.addNewDataAndSortBy("BasketOfProducts.csv",newProducts,CompareType.DEFAULT);
+//        sort.writeToCSVNewProducts("BasketOfProducts.csv",newProducts);
 
 //        FileWriter fran = new FileWriter();
 //        fran.writeToCSVRandomData("BasketOfProducts.csv",10);
