@@ -10,6 +10,21 @@ public class Product implements Comparable<Product> {
     private String articul;
     private int price;
 
+    public Product() {
+        this.name =null;
+        this.dateProduction =null;
+        this.productLife = null;
+        this.articul = null;
+        this.price = 0;
+    }
+
+    public Product(String name, String dateProduction, String productLife, String articul, int price) {
+        this.name = name;
+        this.dateProduction = dateProduction;
+        this.productLife = productLife;
+        this.articul = articul;
+        this.price = price;
+    }
 
     public String getName() {
         return name;

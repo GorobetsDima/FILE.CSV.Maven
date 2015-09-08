@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class FileWriter implements CSVWriter {
     private static final String SEPARATOR = ", ";
-    private static StringBuilder featureProducts;
+
 
     public FileWriter() {
 
@@ -54,7 +54,8 @@ public class FileWriter implements CSVWriter {
         }
     }
 //метод записывае в строку поля продукта р.
-    public static StringBuilder rowToCsv(Product p) {
+    public  StringBuilder rowToCsv(Product p) {
+         StringBuilder featureProducts;
 
         featureProducts = new StringBuilder();
         featureProducts.append(p.getName()).append(SEPARATOR).append(p.getArticul()).append(SEPARATOR).

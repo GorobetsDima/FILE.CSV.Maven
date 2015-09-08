@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class FileReader1 implements CSVReader {
     private static String[] csvProduct;
-    private static final String SEPARATOR = ",";
+    private static final String SEPARATOR = ", ";
     private int numberOfProducts;
 
     public static String[] getCsvProduct() {
@@ -35,7 +35,7 @@ public class FileReader1 implements CSVReader {
 
             for (int i = 0; i < csvProduct.length; i++) {
                 if (textCSV != null) {
-                    csvProduct[i] = readfromCSV.readLine() + "\n";//записываю в массив строк csvProduct строки считанные с файла CSV
+                    csvProduct[i] = readfromCSV.readLine() ; //записываю в массив строк csvProduct строки считанные с файла CSV
                 } else break;
 
             }
@@ -43,8 +43,10 @@ public class FileReader1 implements CSVReader {
             System.out.println(Arrays.toString(csvProduct));//печатаю содержимое массива строк
             for (String st : csvProduct) {
                 if (st != null) {
-                    String[] parameters = st.split(SEPARATOR);//разбиваю элементы массива строк csvProduct на подстроки
-                    // и создаю новый массив из подстрок
+                    //разбиваю элементы массива строк csvProduct на подстроки
+                    String[] parameters = st.split(SEPARATOR); // и создаю новый массив из подстрок
+
+
 
                     Product p = new Product();//создал объект типа Product и заполнил его поля значениями из массива подстрок "parameters"
                     p.setName(parameters[0]);
