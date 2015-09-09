@@ -3,59 +3,68 @@ package HomeWorkCSV;
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created by Gorobets Dmitriy on 26.08.2015.
  */
 public class FileWriter implements CSVWriter {
     private static final String SEPARATOR = ", ";
+    private static final Logger log1 = Logger.getLogger("FileWriter.class");
 
 
     public FileWriter() {
 
     }
-//метод записываает продукты из листа в файл csv
+
+    //метод записываает продукты из листа в файл csv
     @Override
     public void writeProductListToCSV(String destinationFileName, List<Product> newProducts, boolean appendToFile) {
 
-
         PrintWriter writeToCSV = null;
         File file = new File(destinationFileName);
-        try {
-//TODO
-//            if (file.length() == 0) {//проверяю пуст ли файл,если да,то записываю в него инфо
-            writeToCSV = new PrintWriter(new FileOutputStream(file, appendToFile));//создал новый поток
-            for (Product p : newProducts) {
-                writeToCSV.print(rowToCsv(p));//записал инфо из строки StringBuilder в файл CSV
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+                writeToCSV = new PrintWriter(new FileOutputStream(file, appendToFile));//создал новый поток
 
+                for (Product p : newProducts) {
+                    writeToCSV.print(rowToCsv(p));//записал инфо из строки StringBuilder в файл CSV
+                    log1.info("File" + destinationFileName + " was written");
+                }
+                writeToCSV.flush();
+                writeToCSV.close();
+
+            } catch (FileNotFoundException e) {
+               log1.info("File " + destinationFileName + " don't exist ");
+                e.getMessage();
+            } catch (IOException e) {
+                log1.warning("A stream wasn't created");
+                e.printStackTrace();
+            } finally {
+                closeStream(writeToCSV);
             }
+        } else {
+            try {
+                writeToCSV = new PrintWriter(new FileOutputStream(file, appendToFile));//создал новый поток
+                for (Product p : newProducts) {
+                    writeToCSV.print(rowToCsv(p));//записал инфо из строки StringBuilder в файл CSV
+                }
+                writeToCSV.flush();
+                writeToCSV.close();
 
-            writeToCSV.flush();
-            writeToCSV.close();
-//            } else {//если файл не пуст удаляю его и создаю новый!???
-//                file.delete();
-//                file.createNewFile();
-//                writeToCSV = new PrintWriter(new FileOutputStream(file, appendToFile));//создал новый поток
-//
-//                for (Product p : newProducts) {
-//                    writeToCSV.print(rowToCsv(p));//записал инфо из строки StringBuilder в файл CSV
-//                }
-//                writeToCSV.flush();
-//                writeToCSV.close();
-//            }
-
-        } catch (FileNotFoundException e) {
-            e.getMessage();
-
-//        } catch (IOException e) {
-//            e.printStackTrace();
-        } finally {
-            closeStream(writeToCSV);
+            } catch (FileNotFoundException e) {
+                e.getMessage();
+            } finally {
+                closeStream(writeToCSV);
+            }
         }
     }
-//метод записывае в строку поля продукта р.
-    public  StringBuilder rowToCsv(Product p) {
-         StringBuilder featureProducts;
+
+
+    //метод записывае в строку поля продукта р.
+    public StringBuilder rowToCsv(Product p) {
+        StringBuilder featureProducts;
 
         featureProducts = new StringBuilder();
         featureProducts.append(p.getName()).append(SEPARATOR).append(p.getArticul()).append(SEPARATOR).
@@ -132,7 +141,8 @@ public class FileWriter implements CSVWriter {
             closeRandomStream(randomWriteToCSV);
         }
     }
-//метод проверяющий,закрылся ли поток,если нет ,то пытается его закрыть
+
+    //метод проверяющий,закрылся ли поток,если нет ,то пытается его закрыть
     private void closeRandomStream(Closeable stream) {
         if (stream != null) {
             try {
