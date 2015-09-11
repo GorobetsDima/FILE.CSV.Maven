@@ -95,6 +95,13 @@ public class Product implements Comparable<Product> {
 
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" + "name='" + name + '\'' +", dateProduction='" + dateProduction + '\'' +", productLife='" + productLife + '\'' +
+                ", articul='" + articul + '\'' +", price=" + price +'}';
+    }
+
 }
 
 

@@ -10,6 +10,7 @@ import java.util.List;
 public class CSVFileRunner {
     public static void main(String[] args) throws FileNotFoundException {
 
+
 //создаю объекты продуктов,данные о которых нужно поместить в файл CSV
         Product p1 = new Product();
         p1.setName("Молоко");
@@ -86,11 +87,14 @@ public class CSVFileRunner {
         newProducts.add(p8);
 
 
-        FileWriter fw = new FileWriter();
-        fw.writeProductListToCSV("BasketOfProducts.csv", newProducts, true);
+//        FileWriter fw = new FileWriter();
+//        fw.writeProductListToCSV("BasketOfProducts.csv", newProducts, true);
+//
+//
 
-
-        FileReader1 fr = new FileReader1(8);
+        FileWriter fran = new FileWriter();
+        fran.writeToCSVRandomData("BasketOfProducts.csv",newProducts.size());
+        FileReader1 fr = new FileReader1(newProducts.size());
         fr.readFromFile("C:\\Users\\Gorobets Dmitriy\\IdeaProjects\\FILE.CSV.Maven1\\BasketOfProducts.csv");
 
 //        fw.isTrueWriteAndReadCSVFile(fr.getCsvProduct(),newProducts);
@@ -98,8 +102,7 @@ public class CSVFileRunner {
 //        sort.addNewDataAndSortBy("BasketOfProducts.csv",newProducts,CompareType.DEFAULT);
 //        sort.writeToCSVNewProducts("BasketOfProducts.csv",newProducts);
 
-//        FileWriter fran = new FileWriter();
-//        fran.writeToCSVRandomData("BasketOfProducts.csv",10);
+
 
 //WrongFieldNumberException wfne = new WrongFieldNumberException();
 //        wfne.checkNumberOfFields(p9, 5);

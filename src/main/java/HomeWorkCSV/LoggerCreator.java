@@ -7,8 +7,8 @@ import java.util.logging.Logger;
  */
 public class LoggerCreator {
 
- private static final Logger LOG1 =Logger.getLogger("FileWriter.class");
- private static final Logger LOG2 =Logger.getLogger("FileReader1.class");
+ private static final Logger LOG1 =Logger.getLogger(FileWriter.class.toString());
+ private static final Logger LOG2 =Logger.getLogger(FileReader1.class.toString());
 
 
 }
