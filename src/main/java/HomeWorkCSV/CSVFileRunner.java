@@ -87,17 +87,17 @@ public class CSVFileRunner {
         newProducts.add(p8);
 
 
-//        FileWriter fw = new FileWriter();
-//        fw.writeProductListToCSV("BasketOfProducts.csv", newProducts, true);
+        FileWriter fw = new FileWriter();
+        fw.writeProductListToCSV("BasketOfProducts.csv", newProducts, true);
 //
 //
 
-        FileWriter fran = new FileWriter();
-        fran.writeToCSVRandomData("BasketOfProducts.csv",newProducts.size());
+//        FileWriter fran = new FileWriter();
+//        fran.writeToCSVRandomData("BasketOfProducts.csv",newProducts.size());
         FileReader1 fr = new FileReader1(newProducts.size());
         fr.readFromFile("C:\\Users\\Gorobets Dmitriy\\IdeaProjects\\FILE.CSV.Maven1\\BasketOfProducts.csv");
 
-//        fw.isTrueWriteAndReadCSVFile(fr.getCsvProduct(),newProducts);
+//        fw.isTrueWriteAndReadCSVFile(newProducts);
 //        CSVSort sort = new CSVSort();
 //        sort.addNewDataAndSortBy("BasketOfProducts.csv",newProducts,CompareType.DEFAULT);
 //        sort.writeToCSVNewProducts("BasketOfProducts.csv",newProducts);

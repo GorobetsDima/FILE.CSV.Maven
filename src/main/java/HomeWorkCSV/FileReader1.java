@@ -1,24 +1,25 @@
 package HomeWorkCSV;
 
+import org.apache.log4j.Logger;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Created by Gorobets Dmitriy on 26.08.2015.
  */
 public class FileReader1 implements CSVReader {
-    private static final Logger LOG2 = Logger.getLogger(FileReader1.class.toString());
+    private static final Logger LOG2 = Logger.getLogger(FileReader1.class);
     private static String[] csvProduct;
     private static final String SEPARATOR = ", ";
     private int numberOfProducts;
 
 
-    public static String[] getCsvProduct() {
-        return csvProduct;
-    }
+//    public static String[] getCsvProduct() {
+//        return csvProduct;
+//    }
 
 
     public FileReader1(int numberOfProducts) {
@@ -44,6 +45,7 @@ public class FileReader1 implements CSVReader {
                 } else break;
 
             }
+//            System.out.println(Arrays.toString(csvProduct));
 
            //печатаю содержимое массива строк в лог
             LOG2.info("File contents: " + "\n" + Arrays.toString(csvProduct));
@@ -62,20 +64,12 @@ public class FileReader1 implements CSVReader {
                     p.setPrice(Integer.parseInt(parameters[4]));
 
                     result.add(p);//созданный объект "p" помещаю в List объектов типа Product
-                    System.out.println(p.toString());
+
                     break;
-//                    } else {
-//                        p.setName(parameters[0]);
-//                        p.setArticul(parameters[1]);
-//                        p.setDateProduction(parameters[2]);
-//                        p.setProductLife(parameters[3]);
-//                        p.setPrice(Integer.parseInt(parameters[4]));
-//
-//
-//                        result.add(p);//созданный объект "p" помещаю в List объектов типа Product
-//                        break;
+
                 }
             }
+
 
 
             readfromCSV.close();//закрывает поток, если может
@@ -90,6 +84,10 @@ public class FileReader1 implements CSVReader {
 
         return result;
 
+
+    }public static String[] getCsvProduct() {
+        System.out.println(Arrays.toString(csvProduct));
+        return csvProduct;
 
     }
 
