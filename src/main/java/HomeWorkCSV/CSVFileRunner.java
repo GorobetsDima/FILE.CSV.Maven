@@ -10,13 +10,14 @@ import java.util.List;
 public class CSVFileRunner {
     public static void main(String[] args) throws FileNotFoundException {
 
+
 //создаю объекты продуктов,данные о которых нужно поместить в файл CSV
         Product p1 = new Product();
         p1.setName("Молоко");
         p1.setArticul("мп1ж1л");
         p1.setDateProduction("1.01.2016");
         p1.setProductLife("1 месяц");
-        p1.setPrice(14);
+        p1.setPrice(17);
 
         Product p2 = new Product();
         p2.setName("Сыр");
@@ -67,7 +68,15 @@ public class CSVFileRunner {
         p8.setProductLife("6 месяцев");
         p8.setPrice(28);
 
-        List<Product> newProducts = new LinkedList<>();//Лист с обьектами Product
+//        Product p9 = new Product();
+//        p9.setName("Рис");
+//        p9.setArticul("зк7тр1к");
+//        p9.setDateProduction("9.01.2016");
+//        p9.setProductLife("6 месяцев");
+////        p9.setPrice(28);
+//        Product p10 = new Product("Свинина", "мс10тр1к", "5.09.2015", "10 дней", 75);
+
+        List<Product> newProducts = new LinkedList<Product>();//Лист с обьектами Product
         newProducts.add(p1);
         newProducts.add(p2);
         newProducts.add(p3);
@@ -77,22 +86,31 @@ public class CSVFileRunner {
         newProducts.add(p7);
         newProducts.add(p8);
 
-//
-//        FileWriter fw = new FileWriter();
-//        fw.writeProductListToCSV("BasketOfProducts.csv", newProducts, true);
-////
-////
-//        FileReader1 fr = new FileReader1(8);
-//        fr.readFromFile("C:\\Users\\Gorobets Dmitriy\\IdeaProjects\\FILE.CSV.Maven1\\BasketOfProducts.csv");
 
-//        fw.isTrueWriteAndReadCSVFile(fr.getCsvProduct(),newProducts);
-        CSVSort sort = new CSVSort();
-        sort.addNewDataAndSortBy("BasketOfProducts.csv",newProducts,CompareType.DEFAULT);
-//        sort.writeToCSVNewProducts("BasketOfProducts.csv",newProducts);
+        FileWriter fw = new FileWriter();
+        fw.writeProductListToCSV("BasketOfProducts.csv", newProducts, true);
+//
+//
 
 //        FileWriter fran = new FileWriter();
-//        fran.writeToCSVRandomData("BasketOfProducts.csv",10);
+//        fran.writeToCSVRandomData("BasketOfProducts.csv",newProducts.size());
+        FileReader1 fr = new FileReader1(newProducts.size());
+        fr.readFromFile("C:\\Users\\Gorobets Dmitriy\\IdeaProjects\\FILE.CSV.Maven1\\BasketOfProducts.csv");
+
+//        fw.isTrueWriteAndReadCSVFile(newProducts);
+//        CSVSort sort = new CSVSort();
+//        sort.addNewDataAndSortBy("BasketOfProducts.csv",newProducts,CompareType.DEFAULT);
+//        sort.writeToCSVNewProducts("BasketOfProducts.csv",newProducts);
+
+
+
+//WrongFieldNumberException wfne = new WrongFieldNumberException();
+//        wfne.checkNumberOfFields(p9, 5);
+
+
+
+        }
 
 
     }
-}
+

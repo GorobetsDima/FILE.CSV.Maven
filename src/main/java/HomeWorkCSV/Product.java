@@ -10,6 +10,21 @@ public class Product implements Comparable<Product> {
     private String articul;
     private int price;
 
+    public Product() {
+        this.name =null;
+        this.dateProduction =null;
+        this.productLife = null;
+        this.articul = null;
+        this.price = 0;
+    }
+
+    public Product(String name, String dateProduction, String productLife, String articul, int price) {
+        this.name = name;
+        this.dateProduction = dateProduction;
+        this.productLife = productLife;
+        this.articul = articul;
+        this.price = price;
+    }
 
     public String getName() {
         return name;
@@ -55,6 +70,11 @@ public class Product implements Comparable<Product> {
     @Override
     public int compareTo(Product o) {
         int result;
+
+        result = name.compareTo(o.name);
+        if (result != 0) {
+            return result;
+        }
         result = dateProduction.compareTo(o.dateProduction);
         if (result != 0) {
             return result;
@@ -63,10 +83,7 @@ public class Product implements Comparable<Product> {
         if (result != 0) {
             return result;
         }
-        result = name.compareTo(o.name);
-        if (result != 0) {
-            return result;
-        }
+
 
         result = productLife.compareTo(o.productLife);
         if (result != 0) {
@@ -80,6 +97,13 @@ public class Product implements Comparable<Product> {
 
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" + "name='" + name + '\'' +", dateProduction='" + dateProduction + '\'' +", productLife='" + productLife + '\'' +
+                ", articul='" + articul + '\'' +", price=" + price +'}';
+    }
+
 }
 
 

@@ -35,7 +35,7 @@ public class CSVSort implements CSVHolder {
         public int compare(Product o1, Product o2) {
 
             int result;
-            result = Float.compare(o1.getPrice(), o2.getPrice());
+            result = Integer.compare(o1.getPrice(), o2.getPrice());
 
             return result;
 
