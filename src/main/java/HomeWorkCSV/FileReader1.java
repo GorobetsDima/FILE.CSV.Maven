@@ -17,9 +17,6 @@ public class FileReader1 implements CSVReader {
     private int numberOfProducts;
 
 
-//    public static String[] getCsvProduct() {
-//        return csvProduct;
-//    }
 
 
     public FileReader1(int numberOfProducts) {

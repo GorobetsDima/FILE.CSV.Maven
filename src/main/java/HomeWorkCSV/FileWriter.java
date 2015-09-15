@@ -85,7 +85,7 @@ public class FileWriter implements CSVWriter {
                     append(SEPARATOR).append(p.getPrice()).append(SEPARATOR);
         }
 
-        allProducts.delete(341, 343);
+//        allProducts.delete(341, 343);
         allProducts.append("]");
         System.out.println(allProducts);
 

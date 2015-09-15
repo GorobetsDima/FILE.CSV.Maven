@@ -70,6 +70,11 @@ public class Product implements Comparable<Product> {
     @Override
     public int compareTo(Product o) {
         int result;
+
+        result = name.compareTo(o.name);
+        if (result != 0) {
+            return result;
+        }
         result = dateProduction.compareTo(o.dateProduction);
         if (result != 0) {
             return result;
@@ -78,10 +83,7 @@ public class Product implements Comparable<Product> {
         if (result != 0) {
             return result;
         }
-        result = name.compareTo(o.name);
-        if (result != 0) {
-            return result;
-        }
+
 
         result = productLife.compareTo(o.productLife);
         if (result != 0) {
