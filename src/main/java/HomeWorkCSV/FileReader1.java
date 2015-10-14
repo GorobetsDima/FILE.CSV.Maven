@@ -42,7 +42,6 @@ public class FileReader1 implements CSVReader {
                 } else break;
 
             }
-//            System.out.println(Arrays.toString(csvProduct));
 
            //печатаю содержимое массива строк в лог
             LOG2.info("File contents: " + "\n" + Arrays.toString(csvProduct));
