@@ -16,23 +16,6 @@ public class WrongFieldNumberException extends Exception {
         String[] sarr = str.split(SEPARATOR);
         String s = sarr.toString();
         String[] iarr = s.split("");
-//        for (int i = 0; i < iarr.length; i++) {
-//            switch (iarr[i]) {
-//                case " ":
-//                    if(iarr[i+1]=="0"){
-//                        try {
-//                            throw new WrongFieldNumberException();
-//                        } catch (WrongFieldNumberException e) {
-//                            e.getMessage();
-//                            System.out.println("Вы задали не достаточное количество характеристик для продукта!");
-//                            e.printStackTrace();
-//                        }
-//                        break;
-//                    }
-//            }
-//
-//        }
-
 
         System.out.println(sarr.length);
         for (int i = 0; i <iarr.length; i++) {
