@@ -9,7 +9,7 @@ public class WrongFieldNumberException extends Exception {
 
     public static void checkNumberOfFields(Product p, int fieldsNumber) {
         FileWriter writer = new FileWriter();
-//проверить заполнен ли продукт р правельно?(если не выбросить исключ)
+//проверяем заполнен ли продукт р правельно!(если нет, выбросываем исключение)
         StringBuilder sb = writer.rowToCsv(p);
         String str = sb.toString();
         System.out.println(str);
