@@ -68,13 +68,7 @@ public class CSVFileRunner {
         p8.setProductLife("6 месяцев");
         p8.setPrice(28);
 
-//        Product p9 = new Product();
-//        p9.setName("Рис");
-//        p9.setArticul("зк7тр1к");
-//        p9.setDateProduction("9.01.2016");
-//        p9.setProductLife("6 месяцев");
-////        p9.setPrice(28);
-//        Product p10 = new Product("Свинина", "мс10тр1к", "5.09.2015", "10 дней", 75);
+
 
         List<Product> newProducts = new LinkedList<Product>();//Лист с обьектами Product
         newProducts.add(p1);
@@ -89,23 +83,23 @@ public class CSVFileRunner {
 
         FileWriter fw = new FileWriter();
         fw.writeProductListToCSV("BasketOfProducts.csv", newProducts, true);
-//
-//
 
-//        FileWriter fran = new FileWriter();
-//        fran.writeToCSVRandomData("BasketOfProducts.csv",newProducts.size());
+
+
+        FileWriter fran = new FileWriter();
+        fran.writeToCSVRandomData("BasketOfProducts.csv",newProducts.size());
         FileReader1 fr = new FileReader1(newProducts.size());
         fr.readFromFile("C:\\Users\\Gorobets Dmitriy\\IdeaProjects\\FILE.CSV.Maven1\\BasketOfProducts.csv");
 
-//        fw.isTrueWriteAndReadCSVFile(newProducts);
-//        CSVSort sort = new CSVSort();
-//        sort.addNewDataAndSortBy("BasketOfProducts.csv",newProducts,CompareType.DEFAULT);
-//        sort.writeToCSVNewProducts("BasketOfProducts.csv",newProducts);
+       fw.isTrueWriteAndReadCSVFile(newProducts);
+        CSVSort sort = new CSVSort();
+        sort.addNewDataAndSortBy("BasketOfProducts.csv",newProducts,CompareType.DEFAULT);
+        sort.writeToCSVNewProducts("BasketOfProducts.csv",newProducts);
 
 
 
-//WrongFieldNumberException wfne = new WrongFieldNumberException();
-//        wfne.checkNumberOfFields(p9, 5);
+         WrongFieldNumberException wfne = new WrongFieldNumberException();
+        wfne.checkNumberOfFields(p9, 5);
 
 
 
