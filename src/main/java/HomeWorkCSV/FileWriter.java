@@ -59,7 +59,7 @@ public class FileWriter implements CSVWriter {
         }
     }
 
-    //метод записывае в строку поля продукта р.
+    //метод записывает в строку поля продукта р.
     public StringBuilder rowToCsv(Product p) {
         StringBuilder featureProducts;
 
@@ -79,17 +79,16 @@ public class FileWriter implements CSVWriter {
         String[] sar = FileReader1.getCsvProduct();//массив строк считанных с CSV файла
         StringBuilder allProducts = new StringBuilder();
         allProducts.append("[");
-        for (Product p : newProducts) {// ЗАПИСЫВАЮ в строку StringBuilder значения полей объектоа типа Product
+        for (Product p : newProducts) {// ЗАПИСЫВАЮ в строку StringBuilder значения полей объектов типа Product
             allProducts.append(p.getName()).append(SEPARATOR).append(p.getArticul()).append(SEPARATOR).
                     append(p.getDateProduction()).append(SEPARATOR).append(p.getProductLife()).
                     append(SEPARATOR).append(p.getPrice()).append(SEPARATOR);
         }
 
-//        allProducts.delete(341, 343);
         allProducts.append("]");
         System.out.println(allProducts);
 
-        if (allProducts.toString().equals(Arrays.toString(sar))) {//равниваю соответствие записанной строки и считанной посимвольно
+        if (allProducts.toString().equals(Arrays.toString(sar))) {//сравниваю соответствие записанной строки и считанной посимвольно
 
             result = true;
         } else {
@@ -103,7 +102,7 @@ public class FileWriter implements CSVWriter {
     }
 
 
-    // метод,кот. записыват данный случайным образом
+    // метод,кот. записыват данные случайным образом
     @Override
     public void writeToCSVRandomData(String destinationFileName, int lineValue) {
 
